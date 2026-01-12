@@ -1,0 +1,278 @@
+/* ===============================
+   RESET & BASE
+   =============================== */
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+  width: 100%;
+  margin: auto;
+  flex-grow: 1;
+}
+
+/* ===============================
+   HEADER
+   =============================== */
+header{
+  width: 100%;
+  background: #A24535;
+  color: #FFFFFF;
+  font-size: 1em;
+  line-height: 2;
+  letter-spacing: 0.5px;
+  font-weight: 350;
+  margin-bottom: 60px;
+  padding: 30px;
+}
+
+header h1{
+  font-family: serif;
+}
+
+/* Titre + menu */
+.titre{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===============================
+   MENU HAMBURGER
+   =============================== */
+.menu{
+  display: grid;
+  grid-template-rows: repeat(3, 4px);
+  gap: 8px;
+  width: 140px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.menu span{
+  background: #FFFFFF;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animation burger */
+.menu.active span:nth-child(1){
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu.active span:nth-child(2){
+  opacity: 0;
+}
+
+.menu.active span:nth-child(3){
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ===============================
+   NAVIGATION (MOBILE FIRST)
+   =============================== */
+nav{
+  display: none;
+  flex-direction: column;
+  background: #A24535;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+nav.active{
+  display: flex;
+}
+
+nav a{
+  color: #FFFFFF;
+  font-size: 1.2em;
+  padding: 15px;
+  margin: 10px 0;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+nav a:hover{
+  background: rgba(255,255,255,0.15);
+}
+
+/* ===============================
+   ACCUEIL
+   =============================== */
+#accueil{
+  padding: 45px 35px 10px 35px;
+  margin-bottom: 50px;
+  font-family: sans-serif;
+}
+
+#accueil h2{
+  font-size: 1.8em;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  font-weight: 460;
+  color: #b10000;
+  margin-bottom: 40px;
+}
+
+#accueil p,
+#accueil li{
+  line-height: 2;
+  letter-spacing: 0.3px;
+  font-size: 1.3em;
+}
+
+/* ===============================
+   EXERCICES
+   =============================== */
+#exercices{
+  padding: 45px 35px;
+}
+
+#exercices h2{
+  text-align: center;
+  text-decoration: underline;
+  letter-spacing: 0.5px;
+  font-size: 2em;
+  font-weight: 500;
+  font-family: sans-serif;
+  color: #282828;
+}
+
+.contenu{
+  margin: 20px 0px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  text-align: justify;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.exercice1,
+.exercice2{
+  padding: 20px;
+  box-shadow: 0 0 5px #000000;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.exercice1:hover,
+.exercice2:hover{
+  background: #F6F6F6;
+  padding: 25px;
+  box-shadow: inset 0 0 5px #000000;
+}
+
+.exercice1 p,
+.exercice2 p{
+  font-size: 1.1em;
+  line-height: 1.8em;
+  margin: 10px 0 20px;
+}
+
+.exercice1 li,
+.exercice2 li{
+  margin-bottom: 15px;
+  line-height: 1.5em;
+}
+
+/* ===============================
+   REPONSE
+   =============================== */
+#reponse{
+  margin: 40px 30px;
+  font-family: sans-serif;
+}
+
+#reponse h2{
+  margin-bottom: 15px;
+  font-size: 1.8em;
+  text-align: center;
+  font-weight: 500;
+  color: #303030;
+}
+
+#reponse input,
+#reponse label{
+  font-size: 1em;
+  margin-top: 20px;
+  display: block;
+}
+
+/* ===============================
+   BOUTON
+   =============================== */
+button{
+  padding: 8px;
+  font-size: 1.1em;
+  color: #FFFFFF;
+  background: #0015FF;
+  box-shadow: inset 0 0 5px #FFFFFF;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+footer{
+  background: #DFDFDF;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  padding: 30px;
+  font-size: 1.1em;
+  text-align: center;
+  box-shadow: 0 0 5px #373737;
+  font-family: sans-serif;
+}
+
+footer a{
+  color: #0011FF;
+  text-decoration: none;
+}
+
+/* ===============================
+   RESPONSIVE TABLETTE & PC
+   =============================== */
+@media (min-width: 768px){
+
+  .menu{
+    display: none;
+  }
+
+  nav{
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    background: transparent;
+    padding: 0;
+  }
+
+  nav a{
+    margin: 0 15px;
+    font-size: 1em;
+  }
+
+  .contenu{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  footer{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+ol{
+  margin-left: 15px;
+  }
